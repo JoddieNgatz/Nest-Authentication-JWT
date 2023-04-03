@@ -8,8 +8,8 @@ export class User extends BaseEntity {
 
   @Column({ type: 'varchar' })
   public email!: string;
-
-  @Exclude()
+  
+  @Exclude() //used to remove this property (password) from our response data
   @Column({ type: 'varchar' })
   public password!: string;
 
