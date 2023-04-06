@@ -6,13 +6,15 @@ import { AppService } from './app.service';
 import { getEnvPath } from './common/helper/env.helper';
 import { TypeOrmConfigService } from './shared/typeorm/typeorm.service';
 import { ApiModule } from './api/api.module';
+import { User } from './api/user/user.entity';
 
 const envFilePath: string = getEnvPath(`${__dirname}/common/envs`);
 
 @Module({
   imports: [
+    User, 
     ConfigModule.forRoot({ envFilePath, isGlobal: true }),
-    TypeOrmModule.forRootAsync({ useClass: TypeOrmConfigService }),
+    TypeOrmModule.forRootAsync({ useClass: TypeOrmConfigService, }),
     ApiModule,
   ],
   controllers: [AppController],
