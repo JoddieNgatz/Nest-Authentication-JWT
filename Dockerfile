@@ -1,5 +1,5 @@
 # Install node js
-FROM node:8-alpine
+FROM node:14-alpine
 #Add work directory
 WORKDIR /app  
 #add package.json file
