@@ -17,3 +17,7 @@ CMD ["npm", "run", "start"]
 ## in command promp build <docker build -t Nest-Authentication-JWT .>
 ## run image locally <docker run -p 8080:8080 nest-authentication-jwt>
 ## NB: bind your container ports with host.
+
+# depends_on:
+#   - redis
+#   - postgres

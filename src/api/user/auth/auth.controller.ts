@@ -27,6 +27,14 @@ export class AuthController {
     return this.service.refresh(<User>user);
   }
 
+
+  
+  @Post('delete')
+  @UseGuards(JwtAuthGuard)
+  private delete(@Req() { user }: Request): Promise<boolean> {
+    return this.service.delete(<User>user);
+  }
+
 //   @Post('reset')
 //   @UseGuards(JwtAuthGuard)
 //   private reset(@Req() { user }: Request): Promise<string | never> {

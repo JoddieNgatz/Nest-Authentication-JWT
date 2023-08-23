@@ -55,4 +55,14 @@ export class AuthService {
 
     return this.helper.generateToken(user);
   }
+  public async delete(user: User): Promise<boolean> {
+    try{
+      
+    this.repository.delete(user.id);
+    return true;
+    }catch{
+return false;
+    }
+
+  }
 }
